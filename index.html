@@ -1278,7 +1278,7 @@ input:valid {
         // simulate success
         showToast('Cadastro enviado com sucesso!', 'success');
         form.reset();
-        location.hash = '#/';
+        location.hash = 
       }
     });
 
@@ -1336,6 +1336,36 @@ input:valid {
 /* (coloque aqui o conteúdo completo do style.css já presente no documento) */
 
 /* Para demonstração, garanta que as regras de .modal, .toast, .card-grid, .btn, etc. estejam definidas no seu style.css */
+
+<nav class="navbar" aria-label="Menu principal"></nav>
+<button aria-label="Abrir menu" aria-expanded="false"></button>
+<ul role="menubar">
+  <li role="none"><a role="menuitem" href="" data-link>Início</a></li>
+</ul>
+<div class="modal-content" role="dialog" aria-modal="true"></div>
+<div class="toast" role="status" aria-live="polite"></div>
+
+:root {
+  --color-bg: #ffffff;
+  --color-text: #1a1a1a;
+  --color-primary: #0055cc;
+  --color-accent: #ffcc00;
+}
+
+body.dark-mode {
+  --color-bg: #0d1117;
+  --color-text: #f5f5f5;
+  --color-primary: #58a6ff;
+  --color-accent: #f1c40f;
+}
+
+body.high-contrast {
+  --color-bg: #000000;
+  --color-text: #ffffff;
+  --color-primary: #00ffff;
+  --color-accent: #ff0000;
+}
+
 
 </body>
 </html>
