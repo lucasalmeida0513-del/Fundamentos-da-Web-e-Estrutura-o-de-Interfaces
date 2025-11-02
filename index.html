@@ -128,7 +128,7 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; 2025 Empresa Exemplo.</p>
+      <p>&copy;  Empresa Lucas .</p>
     </div>
   </footer>
 
@@ -140,6 +140,173 @@
     input,select,button{padding:.5rem;font-size:1rem;width:100%}
     button{background:#0077cc;color:#fff;border:none;border-radius:6px;cursor:pointer;padding:.75rem}
     button:hover{background:#005fa3}
+
+    /* ===== css/style.css ===== */
+:root {
+  /* Paleta de cores (8 cores mínimas) */
+  --color-primary: #005fa3;
+  --color-primary-light: #0077cc;
+  --color-secondary: #f5a623;
+  --color-secondary-dark: #e59400;
+  --color-neutral-100: #ffffff;
+  --color-neutral-200: #f7f7f7;
+  --color-neutral-400: #cccccc;
+  --color-neutral-700: #555555;
+  --color-neutral-900: #111111;
+
+  /* Tipografia hierárquica */
+  --font-size-xxl: 2.5rem; /* Títulos principais */
+  --font-size-xl: 2rem;   /* Subtítulos */
+  --font-size-lg: 1.5rem; /* Destaques */
+  --font-size-md: 1.125rem; /* Texto padrão */
+  --font-size-sm: 0.875rem; /* Legendas */
+
+  /* Sistema de espaçamento modular */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+
+  --max-width: 1100px;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  color: var(--color-neutral-900);
+  line-height: 1.45;
+  font-size: var(--font-size-md);
+  background-color: var(--color-neutral-200);
+  padding: 0 var(--space-2);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-2);
+}
+
+.site-header {
+  background: var(--color-neutral-100);
+  border-bottom: 1px solid var(--color-neutral-400);
+  padding: var(--space-2) 0;
+}
+
+.logo {
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--color-primary);
+  font-size: var(--font-size-lg);
+}
+
+.main-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: var(--space-2);
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: var(--color-neutral-900);
+  font-weight: 500;
+}
+
+.main-nav a:hover {
+  color: var(--color-primary-light);
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: var(--space-3);
+  max-width: var(--max-width);
+  margin: var(--space-3) auto;
+}
+
+@media (max-width: 800px) {
+  main { grid-template-columns: 1fr; }
+}
+
+.sidebar {
+  background: var(--color-neutral-100);
+  padding: var(--space-2);
+  border: 1px solid var(--color-neutral-400);
+  border-radius: var(--space-1);
+}
+
+h1 {
+  font-size: var(--font-size-xxl);
+  margin-bottom: var(--space-2);
+  color: var(--color-primary);
+}
+
+h2 {
+  font-size: var(--font-size-xl);
+  margin-top: var(--space-3);
+  color: var(--color-secondary-dark);
+}
+
+h3 {
+  font-size: var(--font-size-lg);
+  margin-top: var(--space-2);
+}
+
+p, li {
+  font-size: var(--font-size-md);
+  color: var(--color-neutral-700);
+}
+
+.lead {
+  color: var(--color-neutral-700);
+  font-size: var(--font-size-lg);
+}
+
+.gallery-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-2);
+  padding: 0;
+  margin: 0;
+}
+
+.gallery-grid li {
+  background: var(--color-neutral-100);
+  padding: 0;
+  border: 1px solid var(--color-neutral-400);
+  border-radius: var(--space-1);
+  overflow: hidden;
+}
+
+figure {
+  margin: 0;
+}
+
+figcaption {
+  padding: var(--space-1);
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-700);
+}
+
+.site-footer {
+  background: var(--color-neutral-100);
+  border-top: 1px solid var(--color-neutral-400);
+  padding: var(--space-2);
+  margin-top: var(--space-4);
+  text-align: center;
+}
+
+a:focus {
+  outline: 3px solid var(--color-secondary);
+  outline-offset: 2px;
+}
   </style>
 </body>
 </html>
+
