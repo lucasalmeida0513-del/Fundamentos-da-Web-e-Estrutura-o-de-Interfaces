@@ -1,0 +1,145 @@
+<!-- ===== cadastro.html ===== -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Cadastro — Empresa Exemplo</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const masks = {
+        cpf(value) {
+          return value
+            .replace(/\D/g, '')
+            .replace(/(\d{3})(\d)/, '$1.$2')
+            .replace(/(\d{3})(\d)/, '$1.$2')
+            .replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+        },
+        telefone(value) {
+          return value
+            .replace(/\D/g, '')
+            .replace(/(\d{2})(\d)/, '($1) $2')
+            .replace(/(\d{5})(\d{4})$/, '$1-$2');
+        },
+        cep(value) {
+          return value
+            .replace(/\D/g, '')
+            .replace(/(\d{5})(\d{3})$/, '$1-$2');
+        }
+      };
+
+      document.querySelectorAll('[data-mask]').forEach((input) => {
+        const maskType = input.dataset.mask;
+        input.addEventListener('input', (e) => {
+          e.target.value = masks[maskType](e.target.value);
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">Empresa Exemplo</a>
+      <nav aria-label="Menu principal">
+        <ul class="main-nav">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="about.html">Sobre</a></li>
+          <li><a href="gallery.html">Galeria</a></li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>Formulário de Cadastro</h1>
+    <p class="lead">Preencha seus dados para se cadastrar em nossa plataforma.</p>
+
+    <form action="#" method="post" novalidate class="formulario-cadastro">
+      <fieldset>
+        <legend>Dados Pessoais</legend>
+
+        <label for="nome">Nome Completo:</label>
+        <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" placeholder="exemplo@email.com" required>
+
+        <label for="cpf">CPF:</label>
+        <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" maxlength="14" required data-mask="cpf">
+
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" maxlength="15" required data-mask="telefone">
+
+        <label for="data-nascimento">Data de Nascimento:</label>
+        <input type="date" id="data-nascimento" name="data-nascimento" required>
+      </fieldset>
+
+      <fieldset>
+        <legend>Endereço</legend>
+
+        <label for="endereco">Endereço:</label>
+        <input type="text" id="endereco" name="endereco" placeholder="Rua, número e complemento" required>
+
+        <label for="cep">CEP:</label>
+        <input type="text" id="cep" name="cep" placeholder="00000-000" maxlength="9" required data-mask="cep">
+
+        <label for="cidade">Cidade:</label>
+        <input type="text" id="cidade" name="cidade" required>
+
+        <label for="estado">Estado:</label>
+        <select id="estado" name="estado" required>
+          <option value="">Selecione...</option>
+          <option value="AC">Acre</option>
+          <option value="AL">Alagoas</option>
+          <option value="AP">Amapá</option>
+          <option value="AM">Amazonas</option>
+          <option value="BA">Bahia</option>
+          <option value="CE">Ceará</option>
+          <option value="DF">Distrito Federal</option>
+          <option value="ES">Espírito Santo</option>
+          <option value="GO">Goiás</option>
+          <option value="MA">Maranhão</option>
+          <option value="MT">Mato Grosso</option>
+          <option value="MS">Mato Grosso do Sul</option>
+          <option value="MG">Minas Gerais</option>
+          <option value="PA">Pará</option>
+          <option value="PB">Paraíba</option>
+          <option value="PR">Paraná</option>
+          <option value="PE">Pernambuco</option>
+          <option value="PI">Piauí</option>
+          <option value="RJ">Rio de Janeiro</option>
+          <option value="RN">Rio Grande do Norte</option>
+          <option value="RS">Rio Grande do Sul</option>
+          <option value="RO">Rondônia</option>
+          <option value="RR">Roraima</option>
+          <option value="SC">Santa Catarina</option>
+          <option value="SP">São Paulo</option>
+          <option value="SE">Sergipe</option>
+          <option value="TO">Tocantins</option>
+        </select>
+      </fieldset>
+
+      <button type="submit">Enviar Cadastro</button>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Empresa Exemplo.</p>
+    </div>
+  </footer>
+
+  <style>
+    form{max-width:600px;margin:2rem auto;display:flex;flex-direction:column;gap:1rem;padding:1rem;border:1px solid #ddd;border-radius:8px;background:#fafafa}
+    fieldset{border:1px solid #ccc;border-radius:6px;padding:1rem}
+    legend{font-weight:bold;padding:0 .5rem}
+    label{display:block;margin-top:.5rem}
+    input,select,button{padding:.5rem;font-size:1rem;width:100%}
+    button{background:#0077cc;color:#fff;border:none;border-radius:6px;cursor:pointer;padding:.75rem}
+    button:hover{background:#005fa3}
+  </style>
+</body>
+</html>
